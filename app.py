@@ -27,3 +27,22 @@ class GestorTareas:
     def bienvenida(self):
 
         print("Bienvenido a tu lista de tareas")
+
+
+    def guardar_tarea(self, tarea):
+
+        if tarea not in self.tareas:
+
+            if tarea.lower() == "salir":
+
+                return "Saliendo del programa"
+
+            self.tareas.append(tarea)
+            return "Tarea agregada"
+
+
+gestor = GestorTareas()
+
+gestor.bienvenida()
+print(gestor.guardar_tarea("Aprender git"))
+print(gestor.guardar_tarea("salir"))
