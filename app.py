@@ -54,6 +54,15 @@ class GestorTareas:
             print("No hay tareas")
 
 
+    def guardar_archivo(self):
+
+        with open("tareas.txt", "w") as archivo:
+
+            for index, tarea in enumerate(self.tareas, start=1):
+
+                archivo.write(f"{index}. {tarea}\n")
+
+
 gestor = GestorTareas()
 
 gestor.bienvenida()
@@ -61,3 +70,4 @@ print(gestor.guardar_tarea("Aprender git"))
 print(gestor.guardar_tarea("Aprender gitHub"))
 print(gestor.guardar_tarea("salir"))
 gestor.listar_tareas()
+gestor.guardar_archivo()
