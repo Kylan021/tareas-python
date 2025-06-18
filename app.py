@@ -41,8 +41,23 @@ class GestorTareas:
             return "Tarea agregada"
 
 
+    def listar_tareas(self):
+
+        if self.tareas:
+
+            for index, tarea in enumerate(self.tareas, start=1):
+
+                print(f"{index}. {tarea}")
+
+        else:
+
+            print("No hay tareas")
+
+
 gestor = GestorTareas()
 
 gestor.bienvenida()
 print(gestor.guardar_tarea("Aprender git"))
+print(gestor.guardar_tarea("Aprender gitHub"))
 print(gestor.guardar_tarea("salir"))
+gestor.listar_tareas()
