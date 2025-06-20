@@ -63,6 +63,16 @@ class GestorTareas:
                 archivo.write(f"{index}. {tarea}\n")
 
 
+    def eliminar_tarea(self, tarea):
+
+        if tarea in self.tareas:
+
+            self.tareas.remove(tarea)
+            return f"Tarea {tarea} eliminada."
+        
+        return f"No se encuentra dentro de las tareas."
+
+
 gestor = GestorTareas()
 
 gestor.bienvenida()
@@ -71,4 +81,5 @@ print(gestor.guardar_tarea("Aprender gitHub"))
 print(gestor.guardar_tarea("salir"))
 gestor.listar_tareas()
 gestor.guardar_archivo()
+print(gestor.eliminar_tarea("Aprender gitHub"))
 gestor.listar_tareas()
